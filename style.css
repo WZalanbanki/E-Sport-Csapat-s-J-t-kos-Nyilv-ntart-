@@ -1,0 +1,36 @@
+
+body{
+    background-color:rgba(16, 5, 42, 1);
+    color: #fff;
+}
+nav{
+    position: fixed;
+    background-color: rgb(111, 104, 206);
+    z-index: 1000;
+    width: 100%;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+}
+.slider{
+    height: 100vh !important;
+}
+.carousel-inner{
+    margin-top: 80px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    color: #000;
+}
+.carousel-control-prev-icon{
+    margin-left: -100px;
+}
+.carousel-control-next-icon{
+    margin-right: -100px;
+}
+.carousel-item img{
+    width: 90% !important;
+}
