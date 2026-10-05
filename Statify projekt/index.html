@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Statify</title>
+</head>
+
+<body class="pt-0">
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav>
+                    <ul class="d-flex justify-content-between pt-1 m-0">
+                        <li class="logo">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <img src="img/Statify logo.png" alt="Statify's logo">
+                                <p class="fs-2 fw-bold logoFont pt-3">Statify</p>
+                            </div>
+                        </li>
+                        <li><a class="" href="#">Nyilvántartó</a></li>
+                        <li><a class="" href="#">Főoldal</a></li>
+                        <li><a class="" href="#">Meccsek</a></li>
+                        <li>
+                            <div class="d-flex">
+                                <div class="profil">
+                                        <p class="login">
+                                            Login
+                                        </p>
+                                </div>
+                                <div class="ps-2"><button type="button" class="register" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                        data-bs-whatever="@getbootstrap">Register</button></div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sliderContainer">
+                <div class="sliderPanel">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNC98E2XEGkUGZ8oYFpHBAOBCOvGA6kbZMFM1XtR6ICU7c4KhkoJ7AXtbY&s=10" class="sliderKep" alt="...">
+
+                </div>
+                <div class="sliderPanel">
+                        <img src="https://www.pwc.com/hu/hu/szolgaltatasok/sport/esport/esport_banner.jpg" class="sliderKep" alt="...">
+                </div>
+                <div class="sliderPanel">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg8HXM9_1BhN21C-f7HNsN3zlEkhcJqv7oW8cF2OPRBLxUM3xWePJrAs4m&s=10" class="sliderKep" alt="...">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container d-flex text-center justify-content-center flex-column introParagraph">
+            <h2>
+                By leading technicians and world famous players
+            </h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore hic nisi ipsam fugiat quisquam eius facilis molestiae! Exercitationem dolor, nam atque praesentium corrupti iure adipisci.
+            </p>
+        </section>
+        <section class="py-5 my-5">
+            <div class="container">
+                <div class="row chang">
+                    <div class="col-lg-7 ">
+                        <h2 class="changeTitle">E sport változó cím</h2>
+                        <p class="changeSzoveg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos iusto eos
+                            quod, rem hic, sit voluptatem alias dolorem veniam error atque suscipit sint molestias
+                            maxime quisquam pariatur iure. Placeat temporibus quidem culpa, doloribus ab accusantium
+                            beatae cumque at consectetur distinctio tempora et fugiat. Quae minus nobis repellat ad odit
+                            excepturi!</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="pe-2 "><img class="w-100 changeImg"
+                                src="https://esport1.hu/images/fb_share/64e73df70fedf_64e73df70fe96-harcba-indulnak-kihirdettek-a-magyar-e-sport-valogatott-vilagbajnoki-jatekoskeretet.jpg"
+                                alt="valtoro kep" title="valtozo kep"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container feliratkozas p-4">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h2>Sign up to our newsletter today. </h2>
+                        <p class="fs-6">
+                            We have the freshest news - you decide what topics we notify you of. <br>
+                            You decide when you dont want more news. <br>
+                            Statify - from E-Sports players and enjoyers - to from E-Sports players and enjoyers.
+                        </p>
+                    </div>
+                    <div class="col-lg-5 d-flex align-items-center">
+                        <button type="button" class="btn signUp" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Sign up now!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="pt-5 mt-5">
+        <p class="text-center">&copy;Minden jog fenntartva!</p>
+    </footer>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Bejelentkezés</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="pb-3">
+                            <label for="name" class="col-form-label">Keresztnév:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="pb-3">
+                            <label for="name" class="col-form-label">Vezetéknév:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="pb-3">
+                            <label for="name" class="col-form-label">User name:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Email cím:</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Jelszó:</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Jelszó megerősítés:</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <div>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Elfogadom az adattájékoztatót</label>
+                            </div>
+                            <div class="py-2">
+                                <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Feliratkozás a hírlevélre</label>
+                            </div>
+                            <div class="pt-2">
+                                <button type="button" class="btn btn-success">Success</button>
+                            </div>
+                        </div>                    
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/slickSlidesInit.js"></script>
+    <script src="js/nyilvantarto.js"></script>
+    <script src="js/fooldal.js"></script>
+
+</body>
+</html>

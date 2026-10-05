@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body{
+    color: #fff;
+    font-family: "Cantarell", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    background-image: url(../img/background.png);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.logoFont, .signUp{
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+    color: rgb(236, 85, 30);
+}
+
+nav{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.637);
+    z-index: 1000;
+    width: 100%;
+}
+nav ul li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(236, 85, 30);
+    font-weight: 600;
+}
+.sliderKep{
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 600px;
+    border-radius: 50px;
+}
+.sliderPanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sliderContainer{
+width: 70%;
+margin: 0 auto;
+margin-top: 100px;
+}
+.feliratkozas{
+    background-color: rgba(172, 56, 13, 0.849);
+    border-radius: 24px;
+    margin-top: 100px;
+}
+.modal-content{
+    background-color: #ccc;
+}
+.logo div img{
+    width: 80px;
+}
+.logo{
+
+}
+.register, .login{
+    background-color: rgb(236, 85, 30);
+    color: #000;
+    border-radius: 5px;
+    padding: 5px 15px;
+    border: none;
+}
+.login{
+    background-color: transparent;
+    color: rgb(236, 85, 30);
+}
+.signUp{
+    margin-left: 30px;
+    width: 70%;
+    background-color: #000;
+}
+.signUp:hover{
+    font-size: 40px;
+    transition: 1s;
+}
+.introParagraph{
+    margin-top: 120px;
+}
+.introParagraph p{
+    margin-top: 100px;
+    margin-bottom: 200px;
+
+}
