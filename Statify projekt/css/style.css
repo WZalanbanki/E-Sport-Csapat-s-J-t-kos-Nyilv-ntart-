@@ -31,8 +31,14 @@ nav ul li{
 }
 nav ul li a{
     text-decoration: none;
-    color: rgb(236, 85, 30);
+    color: #ec551e;
     font-weight: 600;
+    transition: 0.7s;
+}
+nav ul li a:hover{
+
+    text-shadow: #e0e0e0 1px 1px 0, 2px -40px 2px rgba(206,89,55,0);
+    transition: 1s;
 }
 .sliderKep{
     object-fit: cover;
@@ -81,6 +87,7 @@ margin-top: 100px;
     margin-left: 30px;
     width: 70%;
     background-color: #000;
+    transition: 1s;
 }
 .signUp:hover{
     font-size: 40px;
@@ -92,5 +99,12 @@ margin-top: 100px;
 .introParagraph p{
     margin-top: 100px;
     margin-bottom: 200px;
-
+}
+.changeTitle{
+    border-bottom: rgb(236, 85, 30) 1px solid;
+    padding-bottom: 5px;
+}
+.changeSzoveg{
+    font-size: 18px;
+    padding-top: 20px;
 }
