@@ -51,6 +51,9 @@ class Meccs {
             this.#idopont = "Már megtörtént esemény"
         }
     }
+    getIdopont(){
+        return this.#idopont
+    }
     getCsapatA() {
         var er = ""
         for (let i = 0; i < this.#csapatA.length; i++) {
