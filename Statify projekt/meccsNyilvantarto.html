@@ -6,131 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/meccsek.css">
-    <title>E sport</title>
+    <link rel="stylesheet" href="css/meccs.css">
+    <link rel="stylesheet" href="css/meccsMobil.css">
+    <title>Statify – Meccsek</title>
 </head>
 
-<body class="pt-0">
+<body class="pt-0 meccsOldal">
     <header>
-        <div class="container-fluid">
-            <div class="row">
-                <nav>
-                    <ul class="d-flex justify-content-between mt-3">
-                        <li class="logo">Logo</li>
-                        <li><a class="" href="#">Nyilvántartó</a></li>
-                        <li><a class="" href="index.html">Főoldal</a></li>
-                        <li><a class="" href="meccsNyilvantarto.html">Meccsek</a></li>
-                        <li>
-                            <div class="d-flex">
-                                <div class="profil">kep</div>
-                                <div class="ps-2"><button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"
-                                        data-bs-whatever="@getbootstrap">Bejelentkezés</button></div>
-                            </div>
-                        </li>
+        <nav class="navbar navbar-expand-lg statNav" data-bs-theme="dark">
+            <div class="container-fluid">
+                <button type="button" class="profilGomb d-lg-none" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Bejelentkezés">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.5"/><path d="M3 21c0-4.5 4-7 9-7s9 2.5 9 7z"/></svg>
+                </button>
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="img/Statify logo.png" alt="Statify's logo">
+                    <span class="fs-2 fw-bold logoFont">Statify</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Menü">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-lg-auto gap-lg-5 pt-2 pt-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Nyilvántartó</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="meccs.html">Meccsek</a></li>
                     </ul>
-                </nav>
-            </div>
-            <div class="container">
-                <div class="row pt-5 mt-5">
-                    <div class="col-lg-12">
-                        <h1 class="text-center">Meccsek a következő időszakban</h1>
+                    <div class="d-flex align-items-center py-2 py-lg-0">
+                        <div class="profil"><p class="login m-0">Login</p></div>
+                        <div class="ps-2"><button type="button" class="register" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Register</button></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
-    <main>
-        <section>
-            <div class="container">
-                <div class="d-flex cards">
 
-                    <!--<div class="d-flex overflow-auto  pb-3">
-
-                    <div class="card flex-shrink-0" style="width: 300px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 1</h5>
-                            <p class="card-text">Első kártya tartalma.</p>
-                        </div>
-                    </div>
-
-                    <div class="card flex-shrink-0" style="width: 300px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 2</h5>
-                            <p class="card-text">Második kártya tartalma.</p>
-                        </div>
-                    </div>
-
-                    <div class="card flex-shrink-0" style="width: 300px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 3</h5>
-                            <p class="card-text">Harmadik kártya tartalma.</p>
-                        </div>
-                    </div>
-
-                    <div class="card flex-shrink-0" style="width: 300px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 4</h5>
-                            <p class="card-text">Negyedik kártya tartalma.</p>
-                        </div>
-                    </div>
-
-                </div>-->
-                </div>
-
-        </section>
+    <main class="container-fluid px-3 px-lg-5 meccsFo">
+        <h1 class="meccsCim fs-2 mx-auto text-center">Közelgő és lejátszott meccsek</h1>
+        <div class="kartyaSav meccsLista"></div>
     </main>
-    <footer class="pt-5 mt-5">
-        <p class="text-center">&copy;Minden jog fenntartva!</p>
-    </footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-4.0.0.min.js"></script>
-    <script src="js/Meccs.js"></script>
-    <script src="js/nyilvantarto.js"></script>
-    <script src="js/script.js"></script>
-    <div class="modal" id="meccsInfo" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="">
-                        <div class="felsoResz d-flex justify-content-around">
-                            <div>
-                                <p><img src="" alt="Kép" title="Kép"></p>
-                                <p class="idoPont"></p>
-                            </div>
 
-                            <div class="d-flex">
-                                <div class="me-5 pe-5">
-                                    <h2 class="csapatA">A cspat</h2>
-                                    <ul class="jatekosA"></ul>
-                                </div>
-                                <div class="ms-5 ps-5">
-                                    <h2 class="csapatB">B csapat</h2>
-                                    <ul class="jatekosB"></ul>
-                                </div>
-                            </div>
+    <div class="modal fade reszletek" tabindex="-1" aria-labelledby=".reszletCim" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content reszlet">
+                <button type="button" class="btn-close bezar" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                <div class="modal-body reszletRacs">
+                    <div class="kepKeret"><img class="mKep" alt=""></div>
+                    <div class="listak">
+                        <div><h3 class="csapatNev mNevA"></h3><ul  class="jatekosok mListaA"></ul></div>
+                        <div><h3  class="csapatNev mNevB"></h3><ul  class="jatekosok mListaB"></ul></div>
+                    </div>
+                    <div class="pontok">
+                        <span  class="doboz mPontA" aria-label="A csapat pontja">0</span>
+                        <span class="kotojel">-</span>
+                        <span  class="doboz mPontB" aria-label="B csapat pontja">0</span>
+                    </div>
+                    <div class="infoSav">
+                        <div>
+                            <div  class="meccsNev reszletCim"></div>
+                            <div  class="allapot mIdopont"></div>
                         </div>
-                        <div class="alsoResz d-flex justify-content-around">
-                            <div class="w-25">
-                                <p class="d-flex justify-content-around"><span class="pontA"></span> <span> - </span>
-                                    <span class="pontB"></span></p>
-                            </div>
-
-                            <div class="d-flex justify-content-around  w-50">
-                                <div class="">
-                                    <h5>legjobb jatekos</h5>
-                                    <p>itt</p>
-                                </div>
-                                <div>
-                                    <p><span>stat</span><span class="mx-2"">stat</span><span>stat</span></p>
-                                </div>
-                                
-                            </div>
+                        <div class="pontGomb">
+                            <button  class="gomb mPlusA" type="button">+1 A</button>
+                            <span>Pont</span>
+                            <button  class="gomb mPlusB"  type="button">+1 B</button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -141,55 +82,32 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Bejelentkezés</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bejelentkezés</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-dark">
                     <form>
-                        <div class="pb-3">
-                            <label for="name" class="col-form-label">Keresztnév:</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="pb-3">
-                            <label for="name" class="col-form-label">Vezetéknév:</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="pb-3">
-                            <label for="name" class="col-form-label">User name:</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="col-form-label">Email cím:</label>
-                            <input type="email" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="col-form-label">Jelszó:</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="col-form-label">Jelszó megerősítés:</label>
-                            <input type="password" class="form-control">
-                        </div>
+                        <div class="pb-3"><label class="col-form-label">Keresztnév:</label><input type="text" class="form-control"></div>
+                        <div class="pb-3"><label class="col-form-label">Vezetéknév:</label><input type="text" class="form-control"></div>
+                        <div class="pb-3"><label class="col-form-label">User name:</label><input type="text" class="form-control"></div>
+                        <div class="mb-3"><label class="col-form-label">Email cím:</label><input type="email" class="form-control"></div>
+                        <div class="mb-3"><label class="col-form-label">Jelszó:</label><input type="password" class="form-control"></div>
+                        <div class="mb-3"><label class="col-form-label">Jelszó megerősítés:</label><input type="password" class="form-control"></div>
                         <div class="d-flex flex-column align-items-center">
-                            <div>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Elfogadom az
-                                    adattájékoztatót</label>
-                            </div>
-                            <div class="py-2">
-                                <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Feliratkozás a hírlevélre</label>
-                            </div>
-                            <div class="pt-2">
-                                <button type="button" class="btn btn-success">Success</button>
-                            </div>
+                            <div><input type="checkbox" class="form-check-input" id="adat"> <label class="form-check-label" for="adat">Elfogadom az adattájékoztatót</label></div>
+                            <div class="py-2"><input type="checkbox" class="form-check-input" id="hirlevel"> <label class="form-check-label" for="hirlevel">Feliratkozás a hírlevélre</label></div>
+                            <button type="button" class="btn btn-success mt-2">Success</button>
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/meccs.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
