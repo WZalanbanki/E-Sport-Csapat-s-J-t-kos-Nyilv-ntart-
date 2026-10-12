@@ -4,8 +4,6 @@ var kepek = [
     "img/stadionFrontLow.png"
 ]
 
-var aktualis = 0
-
 var jatekosA1 = ["Pista", "Rozi", "Gábor", "Andrea", "Éva"]
 var jatekosB1 = ["Pistaa", "Rozii", "Gáborr", "Andreaa", "Évaa", "Irén"]
 var meccs1 = new Meccs("Kassa", "Köln", "2026-10-10T19:59")
