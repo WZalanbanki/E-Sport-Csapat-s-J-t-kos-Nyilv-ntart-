@@ -1,16 +1,26 @@
 class Meccs {
+    #AcsapatNev
+    #BcsapatNev
     #csapatA
     #csapatB
     #pontA
     #pontB
     #idopont
     #MAXFO = 5
-    constructor(idopont) {
+    constructor(aCsapatNev, bCsapatNev, idopont) {
+        this.setAcsapatNev(aCsapatNev)
+        this.setBcsapatNev(bCsapatNev)
         this.#csapatA = []
         this.#csapatB = []
         this.#pontA = 0
         this.#pontB = 0
         this.setIdopont(idopont)
+    }
+    setAcsapatNev(aCsapatNev){
+        this.#AcsapatNev=aCsapatNev
+    }
+    setBcsapatNev(bCsapatNev){
+        this.#BcsapatNev=bCsapatNev
     }
     csapatAhozzaad(jatekos) {
         for (let i = 0; i < jatekos.length; i++) {
@@ -53,6 +63,12 @@ class Meccs {
     }
     getIdopont(){
         return this.#idopont
+    }
+    getAcsapatNev(){
+        return this.#AcsapatNev
+    }
+    getBcsapatNev(){
+        return this.#BcsapatNev
     }
     getCsapatA() {
         var er = ""
