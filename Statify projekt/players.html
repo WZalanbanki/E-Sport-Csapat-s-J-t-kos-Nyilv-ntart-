@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Players – Statify</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="page-players">
+    <header>
+        <nav>
+            <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="mainMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="mainMenu" class="d-flex justify-content-between pt-1 m-0">
+                <li class="logo">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="Statify logo" />
+                        <span class="logoFont">Statify</span>
+                    </a>
+                </li>
+                <li><a href="players.html" aria-current="page">Players</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li>
+                    <div class="d-flex authButtons">
+                        <button type="button" class="login" onclick="loginOpenform()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Login
+                        </button>
+                        <button type="button" class="register ms-2" onclick="registerOpenform()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Register
+                        </button>
+                    </div>
+                    <div class="userBox d-none">
+                        <span class="userName"></span>
+                        <button type="button" class="logoutButton" onclick="logout()">Logout</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="row g-3">
+            <aside class="col-lg-4 col-xl-3">
+                <h1 class="side-title">TEAM MANAGER</h1>
+                <section class="panel mb-3">
+                    <div class="panel-head">
+                        <i class="bi bi-crosshair2"></i>
+                        CS2 |
+                        <span class="squad-name"></span>
+                    </div>
+                    <div class="squad-tiles d-none"></div>
+                    <img class="team-photo" src="img/playersSideView.jpg" alt="The players of the CS2 team" />
+                    <div class="roster-count">
+                        Roster
+                        <b class="keretSzam"></b>
+                    </div>
+                    <div class="rank-box">
+                        <div>GLOBAL RANK</div>
+                        <div class="rank-num"></div>
+                    </div>
+                    <div class="wl">
+                        <div>
+                            <span class="wl-label">Wins</span>
+                            <b class="text-green csWins"></b>
+                        </div>
+                        <div>
+                            <span class="wl-label">Losses</span>
+                            <b class="text-red csLosses"></b>
+                        </div>
+                        <div>
+                            <span class="wl-label">Winrate</span>
+                            <b class="text-cyan csWinrate"></b>
+                        </div>
+                    </div>
+                    <div class="budget">
+                        <div class="d-flex justify-content-between">
+                            <span>Salary budget</span>
+                            <b class="budgetSzoveg"></b>
+                        </div>
+                        <div class="progress budget-bar">
+                            <div class="progress-bar budgetCsik"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel mb-3">
+                    <div class="panel-head with-btn">
+                        <span>
+                            <i class="bi bi-calendar2-week"></i>
+                            UPCOMING MATCHES
+                        </span>
+                        <button type="button" class="mini-btn btnScrimMini" title="Schedule a scrim"
+                            aria-label="Schedule a scrim">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                    </div>
+                    <ul class="matches"></ul>
+                </section>
+                <section class="panel">
+                    <div class="panel-head">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        QUICK ACTIONS
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn neon-btn btnUjJatekos">
+                            <i class="bi bi-person-plus-fill"></i>
+                            Add player
+                        </button>
+                        <button type="button" class="btn neon-btn btnScrim">
+                            <i class="bi bi-arrow-left-right"></i>
+                            Schedule a scrim
+                        </button>
+                        <button type="button" class="btn neon-btn btnSzerzodes">
+                            <i class="bi bi-file-earmark-text"></i>
+                            Contracts
+                        </button>
+                    </div>
+                </section>
+            </aside>
+            <section class="col-lg-8 col-xl-9">
+                <div class="roster-top d-flex flex-wrap justify-content-between align-items-center gap-2">
+                    <h2 class="roster-title">
+                        PLAYER REGISTRY
+                        <span>|</span>
+                        <em>
+                            CS2
+                            <span class="squad-name"></span>
+                        </em>
+                    </h2>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="pill pill-green aktivSzam"></span>
+                        <span class="pill pill-amber padSzam"></span>
+                        <span class="pill pill-red serultSzam d-none"></span>
+                    </div>
+                </div>
+                <div class="roster">
+                    <div class="roster-head">
+                        <div>PLAYER</div>
+                        <div>ROLE</div>
+                        <div>STATUS</div>
+                        <div>K/D</div>
+                        <div>WINRATE</div>
+                        <div>GRADE</div>
+                        <div>SALARY</div>
+                        <div>ACTIONS</div>
+                    </div>
+                    <div class="roster-body jatekosok"></div>
+                </div>
+                <div class="roster-foot">Tip: click the winrate chart to open the player's detailed stats.</div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Statify – All rights reserved.</p>
+    </footer>
+    <div class="modal fade reszletModal" tabindex="-1" aria-labelledby="detailModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content neon-modal detail-wrap">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="detailModalTitle">Player profile</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-head">
+                        <div>
+                            <div class="detail-nick modalNick"></div>
+                            <div class="detail-sub">
+                                <span class="modalSzerep"></span>
+                                ·
+                                <span class="modalStatusz"></span>
+                            </div>
+                        </div>
+                        <span class="letter detail-letter modalBetu"></span>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">K/D</span>
+                            <b class="modalKD"></b>
+                            <span class="stat-sub modalKillDeath"></span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Winrate</span>
+                            <b class="modalWinrate"></b>
+                            <span class="stat-sub modalWL"></span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Rating</span>
+                            <b class="modalRating"></b>
+                            <span class="stat-sub modalHs"></span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Contract</span>
+                            <b class="modalFizetes"></b>
+                            <span class="stat-sub modalLejar"></span>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <div class="chart-title">Winrate trend (recent periods)</div>
+                        <div class="modalDiagram"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade jatekosModal" tabindex="-1" aria-labelledby="jatekosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content neon-modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 jatekosModalLabel" id="jatekosModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger d-none jatekosHiba" role="alert"></div>
+                    <form class="jatekosUrlap" novalidate>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Nickname</span>
+                                    <input type="text" class="form-control pNick" maxlength="30" />
+                                </label>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Role</span>
+                                    <select class="form-select pSzerep">
+                                        <option>Entry Fragger</option>
+                                        <option>AWPer</option>
+                                        <option>Rifler</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Status</span>
+                                    <select class="form-select pStatus">
+                                        <option value="Active">Active</option>
+                                        <option value="Benched">Benched</option>
+                                        <option value="Injured">Injured</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Kills</span>
+                                    <input type="number" class="form-control pKill" min="0" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Deaths</span>
+                                    <input type="number" class="form-control pDeath" min="0" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Wins</span>
+                                    <input type="number" class="form-control pWon" min="0" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Losses</span>
+                                    <input type="number" class="form-control pLost" min="0" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">HS %</span>
+                                    <input type="number" class="form-control pHs" min="0" max="100" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Rating (HLTV)</span>
+                                    <input type="number" class="form-control pRating" step="0.01" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Salary (€/month)</span>
+                                    <input type="number" class="form-control pFizetes" />
+                                </label>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <label class="d-block">
+                                    <span class="form-label d-block">Contract ends</span>
+                                    <input type="date" class="form-control pLejar" />
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger me-auto d-none btnKiad">
+                        <i class="bi bi-trash3"></i>
+                        Release
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn neon-btn px-4 btnMent">
+                        <i class="bi bi-check2-circle"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade scrimModal" tabindex="-1" aria-labelledby="scrimModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content neon-modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="scrimModalTitle">Schedule a scrim</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger d-none scrimHiba" role="alert"></div>
+                    <div class="mb-3">
+                        <label class="d-block">
+                            <span class="form-label d-block">Opponent</span>
+                            <input type="text" class="form-control sEllenfel" placeholder="e.g. Team Fury" />
+                        </label>
+                    </div>
+                    <label class="d-block">
+                        <span class="form-label d-block">Date and time</span>
+                        <input type="datetime-local" class="form-control sIdopont" />
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn neon-btn px-4 btnScrimMent">
+                        <i class="bi bi-send"></i>
+                        Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade szerzodesModal" tabindex="-1" aria-labelledby="contractModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content neon-modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="contractModalTitle">Contracts</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-borderless align-middle contract-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Role</th>
+                                    <th>Salary</th>
+                                    <th>Expires</th>
+                                    <th>Remaining</th>
+                                </tr>
+                            </thead>
+                            <tbody class="szerzodesek"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade torlesModal" tabindex="-1" aria-labelledby="releaseModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content neon-modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="releaseModalTitle">Release player</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to release
+                    <b class="torlesNev"></b>
+                    ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger btnTorol">Release</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed top-0 end-0 p-3 toastHely"></div>
+    <div class="modal fade account-modal" id="exampleModal" tabindex="-1" aria-label="Login or register"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="groupedTabs d-flex justify-content-around align-items-end">
+                        <div class="register-tab" onclick="registerOpenform()">
+                            <h2>Register</h2>
+                        </div>
+                        <div class="login-tab" onclick="loginOpenform()">
+                            <h2>Login</h2>
+                        </div>
+                    </div>
+                    <div class="formClosingTab">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body modal-body-login d-none">
+                    <form class="w-100" novalidate>
+                        <div>
+                            <label for="loginIdentifier" class="col-form-label">Username or email:</label>
+                            <input type="text" id="loginIdentifier" name="identifier"
+                                class="form-control loginIdentifier" autocomplete="username" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPass" class="col-form-label">Password:</label>
+                            <input type="password" id="loginPass" name="password" class="form-control loginPass"
+                                autocomplete="current-password" />
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" class="btn loginButton">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body modal-body-register d-none">
+                    <form class="w-100" novalidate>
+                        <div class="d-flex justify-content-between">
+                            <div class="pb-3 me-4 w-50">
+                                <label for="registerKNev" class="col-form-label">First name:</label>
+                                <input type="text" id="registerKNev" name="firstName" class="form-control registerKNev"
+                                    autocomplete="given-name" />
+                            </div>
+                            <div class="pb-3 w-50">
+                                <label for="registerVNev" class="col-form-label">Last name:</label>
+                                <input type="text" id="registerVNev" name="lastName" class="form-control registerVNev"
+                                    autocomplete="family-name" />
+                            </div>
+                        </div>
+                        <div class="pb-3">
+                            <label for="registerIGN" class="col-form-label">Username:</label>
+                            <input type="text" id="registerIGN" name="username" class="form-control registerIGN"
+                                autocomplete="username" placeholder="8–20 characters" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="col-form-label">Email address:</label>
+                            <input type="email" id="registerEmail" name="email" class="form-control registerEmail"
+                                autocomplete="email" />
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3 w-50 me-4">
+                                <label for="registerPass" class="col-form-label">Password:</label>
+                                <input type="password" id="registerPass" name="password"
+                                    class="form-control registerPass" autocomplete="new-password" />
+                            </div>
+                            <div class="mb-3 w-50 me-4">
+                                <label for="registerPassConfirm" class="col-form-label">Confirm password:</label>
+                                <input type="password" id="registerPassConfirm" name="passwordConfirm"
+                                    class="form-control registerPassConfirm" autocomplete="new-password" />
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <div>
+                                <input type="checkbox" class="form-check-input" id="acceptPrivacy"
+                                    name="acceptPrivacy" />
+                                <label class="form-check-label" for="acceptPrivacy">
+                                    I accept the privacy policy
+                                </label>
+                            </div>
+                            <div class="py-2">
+                                <input type="checkbox" class="form-check-input mt-2" id="newsletterSignup"
+                                    name="newsletter" />
+                                <label class="form-check-label" for="newsletterSignup">
+                                    Subscribe to the newsletter
+                                </label>
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit" class="btn registerButton">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/Jatekos.js"></script>
+    <script src="js/Csapat.js"></script>
+    <script src="js/MeccsZalan.js"></script>
+    <script src="js/Felhasznalo.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/accountManagement.js"></script>
+</body>
+
+</html>

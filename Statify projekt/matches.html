@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matches – Statify</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="page-matches">
+    <header>
+        <nav>
+            <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="mainMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="mainMenu" class="d-flex justify-content-between pt-1 m-0">
+                <li class="logo">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="Statify logo" />
+                        <span class="logoFont">Statify</span>
+                    </a>
+                </li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="matches.html" aria-current="page">Matches</a></li>
+                <li>
+                    <div class="d-flex authButtons">
+                        <button type="button" class="login" onclick="loginOpenform()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Login
+                        </button>
+                        <button type="button" class="register ms-2" onclick="registerOpenform()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Register
+                        </button>
+                    </div>
+                    <div class="userBox d-none">
+                        <span class="userName"></span>
+                        <button type="button" class="logoutButton" onclick="logout()">Logout</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container-fluid matchesMain">
+        <h1 class="matchesTitle">Upcoming and past matches</h1>
+        <div class="matchTrack meccsLista"></div>
+    </main>
+    <footer>
+        <p>&copy; Statify – All rights reserved.</p>
+    </footer>
+    <div class="modal fade reszletek" tabindex="-1" aria-labelledby="matchModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content reszlet">
+                <button type="button" class="btn-close bezar" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body reszletRacs">
+                    <div class="kepKeret"><img class="mKep" alt="" /></div>
+                    <div class="listak">
+                        <div>
+                            <h3 class="csapatNev mNevA"></h3>
+                            <ul class="jatekosok mListaA"></ul>
+                        </div>
+                        <div>
+                            <h3 class="csapatNev mNevB"></h3>
+                            <ul class="jatekosok mListaB"></ul>
+                        </div>
+                    </div>
+                    <div class="pontok">
+                        <span class="doboz mPontA" aria-label="Team A score">0</span>
+                        <span class="kotojel">-</span>
+                        <span class="doboz mPontB" aria-label="Team B score">0</span>
+                    </div>
+                    <div class="infoSav">
+                        <div>
+                            <div class="meccsNev reszletCim" id="matchModalTitle"></div>
+                            <div class="allapot mIdopont"></div>
+                        </div>
+                        <div class="pontGomb">
+                            <button type="button" class="gomb mPlusA">+1 A</button>
+                            <span>Point</span>
+                            <button type="button" class="gomb mPlusB">+1 B</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade account-modal" id="exampleModal" tabindex="-1" aria-label="Login or register"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="groupedTabs d-flex justify-content-around align-items-end">
+                        <div class="register-tab" onclick="registerOpenform()">
+                            <h2>Register</h2>
+                        </div>
+                        <div class="login-tab" onclick="loginOpenform()">
+                            <h2>Login</h2>
+                        </div>
+                    </div>
+                    <div class="formClosingTab">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="modal-body modal-body-login d-none">
+                    <form class="w-100" novalidate>
+                        <div>
+                            <label for="loginIdentifier" class="col-form-label">Username or email:</label>
+                            <input type="text" id="loginIdentifier" name="identifier"
+                                class="form-control loginIdentifier" autocomplete="username" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPass" class="col-form-label">Password:</label>
+                            <input type="password" id="loginPass" name="password" class="form-control loginPass"
+                                autocomplete="current-password" />
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" class="btn loginButton">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body modal-body-register d-none">
+                    <form class="w-100" novalidate>
+                        <div class="d-flex justify-content-between">
+                            <div class="pb-3 me-4 w-50">
+                                <label for="registerKNev" class="col-form-label">First name:</label>
+                                <input type="text" id="registerKNev" name="firstName" class="form-control registerKNev"
+                                    autocomplete="given-name" />
+                            </div>
+                            <div class="pb-3 w-50">
+                                <label for="registerVNev" class="col-form-label">Last name:</label>
+                                <input type="text" id="registerVNev" name="lastName" class="form-control registerVNev"
+                                    autocomplete="family-name" />
+                            </div>
+                        </div>
+                        <div class="pb-3">
+                            <label for="registerIGN" class="col-form-label">Username:</label>
+                            <input type="text" id="registerIGN" name="username" class="form-control registerIGN"
+                                autocomplete="username" placeholder="8–20 characters" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="col-form-label">Email address:</label>
+                            <input type="email" id="registerEmail" name="email" class="form-control registerEmail"
+                                autocomplete="email" />
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3 w-50 me-4">
+                                <label for="registerPass" class="col-form-label">Password:</label>
+                                <input type="password" id="registerPass" name="password"
+                                    class="form-control registerPass" autocomplete="new-password" />
+                            </div>
+                            <div class="mb-3 w-50 me-4">
+                                <label for="registerPassConfirm" class="col-form-label">Confirm password:</label>
+                                <input type="password" id="registerPassConfirm" name="passwordConfirm"
+                                    class="form-control registerPassConfirm" autocomplete="new-password" />
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center">
+                            <div>
+                                <input type="checkbox" class="form-check-input" id="acceptPrivacy"
+                                    name="acceptPrivacy" />
+                                <label class="form-check-label" for="acceptPrivacy">
+                                    I accept the privacy policy
+                                </label>
+                            </div>
+                            <div class="py-2">
+                                <input type="checkbox" class="form-check-input mt-2" id="newsletterSignup"
+                                    name="newsletter" />
+                                <label class="form-check-label" for="newsletterSignup">
+                                    Subscribe to the newsletter
+                                </label>
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit" class="btn registerButton">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/meccs.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/accountManagement.js"></script>
+</body>
+
+</html>

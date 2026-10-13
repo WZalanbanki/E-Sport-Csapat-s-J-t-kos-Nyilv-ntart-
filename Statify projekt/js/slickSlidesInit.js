@@ -9,3 +9,4 @@ $('.sliderContainer').slick({
     autoplay: true,
 }
 );
+ 

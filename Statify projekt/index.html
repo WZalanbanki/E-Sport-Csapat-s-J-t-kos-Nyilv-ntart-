@@ -1,171 +1,237 @@
-<!DOCTYPE html>
-<html lang="hu">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/slick.css"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Statify</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="pt-0">
+<body class="page-home">
     <header>
-        <div class="container-fluid">
-            <div class="row">
-                <nav>
-                    <ul class="d-flex justify-content-between pt-1 m-0">
-                        <li class="logo">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <img src="img/Statify logo.png" alt="Statify's logo">
-                                <p class="fs-2 fw-bold logoFont pt-3">Statify</p>
-                            </div>
-                        </li>
-                        <li><a class="" href="#">Nyilvántartó</a></li>
-                        <li><a class="" href="#">Főoldal</a></li>
-                        <li><a class="" href="#">Meccsek</a></li>
-                        <li>
-                            <div class="d-flex">
-                                <div class="profil">
-                                        <p class="login">
-                                            Login
-                                        </p>
-                                </div>
-                                <div class="ps-2"><button type="button" class="register" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"
-                                        data-bs-whatever="@getbootstrap">Register</button></div>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+        <div class="mainTitle">
+            <h1>Statify</h1>
+            <p>A better way to enjoy E-sports.</p>
+        </div>
+        <nav>
+            <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="mainMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="mainMenu" class="d-flex justify-content-between pt-1 m-0">
+                <li class="logo">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="Statify logo" />
+                        <span class="logoFont">Statify</span>
+                    </a>
+                </li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="matches.html">Matches</a></li>
+                <li>
+                    <div class="d-flex authButtons">
+                        <button type="button" class="login" onclick="loginOpenform()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Login
+                        </button>
+                        <button type="button" class="register ms-2" onclick="registerOpenform()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Register
+                        </button>
+                    </div>
+                    <div class="userBox d-none">
+                        <span class="userName"></span>
+                        <button type="button" class="logoutButton" onclick="logout()">Logout</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="sliderContainer">
+            <div class="sliderPanel">
+                <img src="img/playersSideView.jpg" class="sliderImg"
+                    alt="Players competing at an e-sports tournament" />
             </div>
-            <div class="sliderContainer">
-                <div class="sliderPanel">
-                        <img src="img/playersSideView.jpg" class="sliderKep" alt="...">
-
-                </div>
-                <div class="sliderPanel">
-                        <img src="img/stadionFront.jpg" class="sliderKep" alt="...">
-                </div>
-                <div class="sliderPanel">
-                        <img src="img/stadionFrontLow.png" class="sliderKep" alt="...">
-                </div>
+            <div class="sliderPanel">
+                <img src="img/stadionFront.jpg" class="sliderImg" alt="A packed e-sports arena" />
+            </div>
+            <div class="sliderPanel">
+                <img src="img/stadionFrontLow.png" class="sliderImg"
+                    alt="An e-sports stage with big screens in front of a cheering crowd" />
             </div>
         </div>
     </header>
     <main>
-        <section class="container d-flex text-center justify-content-center flex-column introParagraph">
-            <h2>
-                By leading technicians and world famous players
-            </h2>
+        <section class="container introParagraph">
+            <h2>By leading technicians and world-famous players</h2>
             <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore hic nisi ipsam fugiat quisquam eius facilis molestiae! Exercitationem dolor, nam atque praesentium corrupti iure adipisci.
+                Statify is built to deliver one of the best esports tracking experiences for fans, players, and
+                competitive gaming enthusiasts. The platform brings together essential esports information in one
+                place, making it easy to follow matches, teams, players, tournaments, and results. Designed with
+                speed and usability in mind, Statify helps users stay up to date with the competitive gaming scene
+                without unnecessary complexity. The website was created by esports experts who understand what fans
+                and competitive players actually need from a tracking platform. Alongside them, experienced
+                technicians and developers built the technology behind Statify to ensure reliable performance and a
+                smooth user experience. Every part of Statify is designed around accurate information, intuitive
+                navigation, and fast access to the latest esports data. Whether you follow one game or multiple
+                competitive titles, Statify gives you a centralized way to keep track of the action. With its
+                combination of esports expertise and technical innovation, Statify aims to set a new standard for
+                esports tracking.
             </p>
         </section>
-        <section class="py-5 my-5">
-            <div class="container">
-                <div class="row chang">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-start">
-                        <h2 class="changeTitle fs-2 w-100">E sport változó cím</h2>
-                        <p class="changeSzoveg">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos iusto eos
-                            quod, rem hic, sit voluptatem alias dolorem veniam error atque suscipit sint molestias
-                            maxime quisquam pariatur iure. Placeat temporibus quidem culpa, doloribus ab accusantium
-                            beatae cumque at consectetur distinctio tempora et fugiat. Quae minus nobis repellat ad odit
-                            excepturi!
-                        </p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="pe-2 "><img class="w-100 changeImg"
-                                src="https://esport1.hu/images/fb_share/64e73df70fedf_64e73df70fe96-harcba-indulnak-kihirdettek-a-magyar-e-sport-valogatott-vilagbajnoki-jatekoskeretet.jpg"
-                                alt="valtoro kep" title="valtozo kep"></p>
-                    </div>
+        <section class="container feature">
+            <div class="row align-items-center g-4 chang">
+                <div class="col-lg-6">
+                    <h2 class="changeTitle fs-2">Donk</h2>
+                    <p class="changeSzoveg">
+                        One of the brightest young talents in Counter-Strike 2. Donk's aggressive, lightning-fast
+                        entry fragging has made him a nightmare for every defence and a favourite of fans all around
+                        the world.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="changeImg" src="https://www.pwc.com/hu/hu/szolgaltatasok/sport/esport/esport_banner.jpg"
+                        alt="Featured player" />
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container feliratkozas p-4">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <h2>Sign up to our newsletter today. </h2>
-                        <p class="fs-6">
-                            We have the freshest news - you decide what topics we notify you of. <br>
-                            You decide when you no longer want to recieve news from us. <br>
-                            <span class="logoFont text-black">Statify</span>  - from E-Sports players and enjoyers - to E-Sports players and enjoyers.
-                        </p>
-                    </div>
-                    <div class="col-lg-5 d-flex align-items-center">
-                        <button type="button" class="btn signUp" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Sign up now!</button>
-                    </div>
+        <section class="container newsletter">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-7">
+                    <h2>Sign up for our newsletter today.</h2>
+                    <p class="fs-6 m-0">
+                        We have the freshest news – you decide which topics we notify you about.
+                        <br />
+                        You decide when you no longer want to receive news from us.
+                        <br />
+                        <span class="logoFont text-black">Statify</span>
+                        – from E-Sports players and enjoyers, to E-Sports players and enjoyers.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <button type="button" class="btn signUp" onclick="registerOpenform()" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Sign up now!
+                    </button>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="pt-5 mt-5">
-        <p class="text-center">&copy;Minden jog fenntartva!</p>
+    <footer>
+        <p>&copy; Statify – All rights reserved.</p>
     </footer>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade account-modal" id="exampleModal" tabindex="-1" aria-label="Login or register"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Bejelentkezés</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="groupedTabs d-flex justify-content-around align-items-end">
+                        <div class="register-tab" onclick="registerOpenform()">
+                            <h2>Register</h2>
+                        </div>
+                        <div class="login-tab" onclick="loginOpenform()">
+                            <h2>Login</h2>
+                        </div>
+                    </div>
+                    <div class="formClosingTab">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="pb-3">
-                            <label for="name" class="col-form-label">Keresztnév:</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="pb-3">
-                            <label for="name" class="col-form-label">Vezetéknév:</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="pb-3">
-                            <label for="name" class="col-form-label">User name:</label>
-                            <input type="text" class="form-control">
+                <div class="modal-body modal-body-login d-none">
+                    <form class="w-100" novalidate>
+                        <div>
+                            <label for="loginIdentifier" class="col-form-label">Username or email:</label>
+                            <input type="text" id="loginIdentifier" name="identifier"
+                                class="form-control loginIdentifier" autocomplete="username" />
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Email cím:</label>
-                            <input type="email" class="form-control">
+                            <label for="loginPass" class="col-form-label">Password:</label>
+                            <input type="password" id="loginPass" name="password" class="form-control loginPass"
+                                autocomplete="current-password" />
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" class="btn loginButton">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body modal-body-register d-none">
+                    <form class="w-100" novalidate>
+                        <div class="d-flex justify-content-between">
+                            <div class="pb-3 me-4 w-50">
+                                <label for="registerKNev" class="col-form-label">First name:</label>
+                                <input type="text" id="registerKNev" name="firstName" class="form-control registerKNev"
+                                    autocomplete="given-name" />
+                            </div>
+                            <div class="pb-3 w-50">
+                                <label for="registerVNev" class="col-form-label">Last name:</label>
+                                <input type="text" id="registerVNev" name="lastName" class="form-control registerVNev"
+                                    autocomplete="family-name" />
+                            </div>
+                        </div>
+                        <div class="pb-3">
+                            <label for="registerIGN" class="col-form-label">Username:</label>
+                            <input type="text" id="registerIGN" name="username" class="form-control registerIGN"
+                                autocomplete="username" placeholder="8–20 characters" />
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Jelszó:</label>
-                            <input type="password" class="form-control">
+                            <label for="registerEmail" class="col-form-label">Email address:</label>
+                            <input type="email" id="registerEmail" name="email" class="form-control registerEmail"
+                                autocomplete="email" />
                         </div>
-                        <div class="mb-3">
-                            <label for="name" class="col-form-label">Jelszó megerősítés:</label>
-                            <input type="password" class="form-control">
+                        <div class="d-flex justify-content-between">
+                            <div class="mb-3 w-50 me-4">
+                                <label for="registerPass" class="col-form-label">Password:</label>
+                                <input type="password" id="registerPass" name="password"
+                                    class="form-control registerPass" autocomplete="new-password" />
+                            </div>
+                            <div class="mb-3 w-50 me-4">
+                                <label for="registerPassConfirm" class="col-form-label">Confirm password:</label>
+                                <input type="password" id="registerPassConfirm" name="passwordConfirm"
+                                    class="form-control registerPassConfirm" autocomplete="new-password" />
+                            </div>
                         </div>
                         <div class="d-flex flex-column align-items-center">
                             <div>
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Elfogadom az adattájékoztatót</label>
+                                <input type="checkbox" class="form-check-input" id="acceptPrivacy"
+                                    name="acceptPrivacy" />
+                                <label class="form-check-label" for="acceptPrivacy">
+                                    I accept the privacy policy
+                                </label>
                             </div>
                             <div class="py-2">
-                                <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Feliratkozás a hírlevélre</label>
+                                <input type="checkbox" class="form-check-input mt-2" id="newsletterSignup"
+                                    name="newsletter" />
+                                <label class="form-check-label" for="newsletterSignup">
+                                    Subscribe to the newsletter
+                                </label>
                             </div>
                             <div class="pt-2">
-                                <button type="button" class="btn btn-success">Success</button>
+                                <button type="submit" class="btn registerButton">Register</button>
                             </div>
-                        </div>                    
+                        </div>
                     </form>
                 </div>
-                
             </div>
         </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
     <script src="js/slickSlidesInit.js"></script>
     <script src="js/nyilvantarto.js"></script>
     <script src="js/fooldal.js"></script>
-
+    <script src="js/account.js"></script>
+    <script src="js/accountManagement.js"></script>
 </body>
+
 </html>
