@@ -91,7 +91,7 @@ class Jatekos {
         }
     }
     setSzerep(szerep) {
-        this.#szerep = Jatekos.SZEREPEK.includes(szerep) ? szerep : "Entry"
+        this.#szerep = Jatekos.SZEREPEK.includes(szerep) ? szerep : "Entry Fragger"
     }
     setStatus(status) {
         this.#status = Jatekos.STATUSOK.includes(status) ? status : "Benched"

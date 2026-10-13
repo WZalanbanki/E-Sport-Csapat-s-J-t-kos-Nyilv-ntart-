@@ -1,7 +1,10 @@
 var kepek = [
-    "img/playersSideView.jpg",
-    "img/stadionFront.jpg",
-    "img/stadionFrontLow.png"
+    "img/event1.jpg",
+    "img/event2.jpg",
+    "img/event5.jpg",
+    "img/event3.webp",
+    "img/event4.webp",
+    "img/event6.webp"
 ]
 var jatekosA1 = ["Pista", "Rozi", "Gábor", "Andrea", "Éva"]
 var jatekosB1 = ["Pistaa", "Rozii", "Gáborr", "Andreaa", "Évaa", "Irén"]

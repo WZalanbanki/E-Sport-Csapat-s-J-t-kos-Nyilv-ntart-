@@ -22,7 +22,7 @@ class Account {
     static PASSWORD_MAX = 64;
 
     constructor(data) {
-        const errors = Account.validate(data);
+        var errors = Account.validate(data);
         if (Object.keys(errors).length > 0) {
             throw new AccountValidationError(errors);
         }
@@ -38,11 +38,11 @@ class Account {
     }
 
     static validate(data) {
-        const errors = {};
-        const text = (value) => (typeof value === "string" ? value.trim() : "");
+        var errors = {};
+        var text = (value) => (typeof value === "string" ? value.trim() : "");
 
-        const namePattern = /^\p{L}+(?:[ '-]\p{L}+)*$/u;
-        const checkName = (field, value, emptyMsg, label) => {
+        var namePattern = /^\p{L}+(?:[ '-]\p{L}+)*$/u;
+        var checkName = (field, value, emptyMsg, label) => {
             if (!value) {
                 errors[field] = emptyMsg;
             } else if (value.length < Account.NAME_MIN || value.length > Account.NAME_MAX || !namePattern.test(value)) {
@@ -52,7 +52,7 @@ class Account {
         checkName("firstName", text(data.firstName), "Enter your first name.", "first name");
         checkName("lastName", text(data.lastName), "Enter your last name.", "last name");
 
-        const username = text(data.username);
+        var username = text(data.username);
         if (!username) {
             errors.username = "Enter a username.";
         } else if (username.length < Account.USERNAME_MIN || username.length > Account.USERNAME_MAX) {
@@ -61,14 +61,14 @@ class Account {
             errors.username = "Only letters, numbers, dots and underscores are allowed.";
         }
 
-        const email = text(data.email);
+        var email = text(data.email);
         if (!email) {
             errors.email = "Enter your email address.";
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
             errors.email = "This is not a valid email address.";
         }
 
-        const password = typeof data.password === "string" ? data.password : "";
+        var password = typeof data.password === "string" ? data.password : "";
         if (!password) {
             errors.password = "Enter a password.";
         } else if (password.length < Account.PASSWORD_MIN) {
@@ -104,7 +104,7 @@ class Account {
     }
 
     matches(identifier) {
-        const id = String(identifier).trim().toLowerCase();
+        var id = String(identifier).trim().toLowerCase();
         return id === this.#username.toLowerCase() || id === this.#email;
     }
 

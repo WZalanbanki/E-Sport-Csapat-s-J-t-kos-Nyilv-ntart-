@@ -1,0 +1,377 @@
+@media (max-width: 1400px) {
+    .roster-head {
+        display: none;
+    }
+
+    .roster-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: start;
+        gap: 10px 14px;
+    }
+
+    .roster-row .cell-player {
+        grid-column: 1 / -1;
+    }
+
+    .roster-row .cell-actions {
+        grid-column: span 2;
+        align-self: center;
+    }
+
+    .roster-row .actions {
+        flex-direction: row;
+    }
+
+    .roster-row .winrate {
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+    }
+
+    .roster-row [data-label]::before {
+        content: attr(data-label);
+        display: block;
+        width: 100%;
+        margin-bottom: 2px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        color: var(--orange);
+        text-transform: uppercase;
+    }
+
+    .act {
+        flex: 1;
+        padding: 4px 6px;
+    }
+}
+
+@media (max-width: 990px) {
+    body {
+        font-size: 18px;
+    }
+
+    /* Home */
+    .mainTitle h1 {
+        font-size: 72px;
+        letter-spacing: 12px;
+    }
+
+    .sliderContainer {
+        width: 90%;
+    }
+
+    .sliderImg {
+        height: 420px;
+        border-radius: 32px;
+    }
+
+    .introParagraph,
+    .feature,
+    .newsletter {
+        margin-top: 60px;
+    }
+
+    .signUp {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .page-players main {
+        padding: calc(var(--nav-height) + 16px) 1rem 0;
+    }
+
+
+    .page-matches {
+        display: block;
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
+    .page-matches footer {
+        padding: 1rem 1rem 1.5rem;
+    }
+
+    .matchesMain {
+        display: block;
+        padding: calc(var(--nav-height) + 20px) 1rem 1rem;
+    }
+
+    .matchesTitle {
+        margin-bottom: 1.75rem;
+        font-size: 1.15rem;
+    }
+
+    .matchTrack {
+        display: block;
+        overflow: visible;
+        padding-left: 2.5rem;
+        scroll-snap-type: none;
+    }
+
+    .meccsOszlop,
+    .meccsOszlop:first-child,
+    .meccsOszlop:last-child {
+        width: auto;
+        margin: 0;
+        padding: 0 0 1rem;
+        scroll-snap-align: none;
+    }
+
+    .meccsOszlop::before {
+        left: -1.5rem;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        height: auto;
+        transform: none;
+    }
+
+    .meccsOszlop::after {
+        left: -1.5rem;
+        right: auto;
+        top: calc(50% - 9.5px);
+        bottom: auto;
+        width: 1.5rem;
+        height: 3px;
+    }
+
+    .kartya {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .kartya .kep {
+        flex: none;
+        width: 42%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .adat {
+        flex: 1;
+        min-width: 0;
+        gap: 0.5rem;
+    }
+
+    .nevek {
+        font-size: 0.85rem;
+    }
+
+    .reszletGomb {
+        display: none;
+    }
+
+    .bezar {
+        top: 0.75rem;
+        right: 0.75rem;
+        box-shadow: none;
+    }
+
+    .reszletRacs {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "img scores"
+            "img info"
+            "lists lists";
+        gap: 0.75rem;
+        padding: 3rem 1rem 1rem;
+    }
+
+    .kepKeret {
+        min-height: 130px;
+    }
+
+    .pontok {
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .pontok .doboz {
+        min-height: 3.5rem;
+        font-size: 1.6rem;
+    }
+
+    .kotojel {
+        display: block;
+        font-size: 1.4rem;
+    }
+
+    .infoSav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .meccsNev {
+        display: none;
+    }
+
+    .pontGomb {
+        padding: 0.5rem 0.4rem;
+        font-size: 0.85rem;
+    }
+
+    .pontGomb .gomb {
+        flex: 1;
+    }
+
+    .listak {
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+        background-attachment: scroll;
+    }
+
+    nav {
+        background-color: rgba(0, 0, 0, 0.88);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        min-height: 0;
+        padding: 0 16px;
+    }
+
+    nav li.logo {
+        min-height: var(--nav-height);
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .logo span {
+        margin-left: 8px;
+    }
+
+    nav li:not(.logo) {
+        display: none;
+    }
+
+    nav.menu-open {
+        background-color: rgba(0, 0, 0, 0.96);
+    }
+
+    nav.menu-open ul {
+        padding-bottom: 12px;
+    }
+
+    nav.menu-open li:not(.logo) {
+        display: flex;
+        justify-content: center;
+        padding: 14px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .modal-body-register,
+    .modal-body-login {
+        padding: 20px 18px 22px;
+    }
+
+    .groupedTabs h2 {
+        font-size: 1rem;
+    }
+
+    .mainTitle {
+        top: calc(var(--nav-height) + 14px);
+        justify-content: center;
+        height: 260px;
+    }
+
+    .mainTitle h1 {
+        margin-bottom: 4px;
+        font-size: 44px;
+        letter-spacing: 6px;
+    }
+
+    .mainTitle p {
+        padding: 0 16px;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .sliderContainer {
+        width: calc(100% - 32px);
+        margin-top: calc(var(--nav-height) + 14px);
+    }
+
+    .sliderImg {
+        height: 260px;
+        border-radius: 20px;
+    }
+
+    .introParagraph,
+    .feature,
+    .newsletter {
+        margin-top: 48px;
+    }
+
+    .introParagraph h2 {
+        font-size: 1.5rem;
+    }
+
+    .introParagraph p {
+        margin-top: 24px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .changeSzoveg {
+        font-size: 16px;
+    }
+
+    .newsletter {
+        width: calc(100% - 32px);
+    }
+
+    .newsletter h2 {
+        font-size: 1.4rem;
+    }
+
+    .signUp:hover {
+        font-size: 1.25rem;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 575px) {
+    .mainTitle {
+        height: 220px;
+    }
+
+    .mainTitle h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .sliderImg {
+        height: 220px;
+    }
+
+    .roster-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .roster-row .cell-actions {
+        grid-column: 1 / -1;
+    }
+}
